@@ -37,6 +37,9 @@
 
 /* General styles */
 
+html{
+    scroll-behavior: smooth;
+}
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -119,7 +122,9 @@ h3 { font-size: var(--fs-h3) }
     padding:0.25em 1em;
     margin-bottom:1em
 }
+
 /*header*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -129,7 +134,7 @@ header {
 .logo {
     max-width: 100px;
 }
-
+/*navigation bar*/
 .nav {
     position: fixed;
     background: var(--clr-dark);
@@ -175,6 +180,25 @@ header {
     right: 1em;
     top: 1em;
     z-index: 1000;
+}
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
 }
 
 .hamburger {
